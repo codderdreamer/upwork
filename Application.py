@@ -20,8 +20,17 @@ class Application():
         self.flask_module.run(BootError)
 
         os.system('pwd')
-        dene = os.system("nmcli dev wifi > network.txt")
-        print(dene)
+        os.system('touch network.txt')
+        os.system("nmcli dev wifi > network.txt")
+
+        file = open("home/pi/upwork/network.txt",'r')
+        lines = file.readlines()
+        i=0
+        network = []
+        for line in lines:
+            a = line.split("\t")
+            print(a)
+        
 
        
 
