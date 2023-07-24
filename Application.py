@@ -23,7 +23,7 @@ class Application():
 
         self.network_ssid = {}
 
-        scan_network()
+        scan_network(self)
 
 
 
