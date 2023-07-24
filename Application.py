@@ -2,7 +2,7 @@ from Modules.WebsocketModule import *
 from Modules.FlaskModule import *
 import time
 import subprocess
-import keyboardd    
+import keyboard
 
 BootError=False
 
