@@ -19,6 +19,7 @@ function connect(){
                 div = document.getElementById('network')
                 div.id = "network" + i.toString()
                 div.innerText = incomingData.Data[i]
+                console.log("incomingData.Data[i]",incomingData.Data[i])
             }
 
 
