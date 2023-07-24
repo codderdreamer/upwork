@@ -7,10 +7,7 @@ function connect(){
         incomingData = JSON.parse( e.data );
         console.log(incomingData)
         if (incomingData.Command == "networks") {
-            console.log("networks")
-            console.log(incomingData.Data)
-
-            
+            document.getElementById("content").innerHTML = ""
             for (let i = 0; i < Object.keys(incomingData.Data).length; i++) {
                 console.log( i)
                 var template = document.getElementById('network-template')
