@@ -19,7 +19,7 @@ class Application():
         self.flask_module = FlaskModule(__name__)
         self.flask_module.run(BootError)
 
-        dene = os.system("nmcli dev wifi")
+        dene = os.system("nmcli dev wifi > home/pi/upwork/network.txt")
         print(dene)
 
        
