@@ -19,7 +19,8 @@ class Application():
         self.flask_module = FlaskModule(__name__)
         self.flask_module.run(BootError)
 
-        dene = os.system("nmcli")
+        dene = os.system("nmcli dev wifi")
+        print(dene)
 
        
 
