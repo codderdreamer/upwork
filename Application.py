@@ -7,6 +7,7 @@ import os
 
 BootError=False
 
+
 class Application():
     def __init__(self):
         self.wifi_devices = []
@@ -26,17 +27,20 @@ class Application():
         file = open("network.txt",'r')
         lines = file.readlines()
         i=0
-        network_ssid = []
+        network_ssid = {}
         ssid = None
         for line in lines:
             line = line.split("        ")[1].split(" ")
             if len(line) > 2:
-                print(line[2])
                 ssid = line[2]
                 if not ssid in network_ssid and not ssid == "":
-                    network_ssid.append(ssid)
+                    network_ssid[ssid]
 
         print("result: ", network_ssid)
+
+        # self.websocket_module.send_message_to_all("networks",)
+
+
 
             
         
