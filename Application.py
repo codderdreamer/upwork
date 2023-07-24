@@ -28,7 +28,7 @@ class Application():
         i=0
         network = []
         for line in lines:
-            a = line.split("        ")[1].split(" ")[1]
+            a = line.split("        ")[1].split(" ")
             print(a)
         
 
