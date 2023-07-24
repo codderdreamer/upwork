@@ -29,7 +29,9 @@ class Application():
         network = []
         for line in lines:
             a = line.split("        ")[1].split(" ")
-            print(a)
+            if len(a) > 2:
+                print(a[2])
+            
         
 
        
