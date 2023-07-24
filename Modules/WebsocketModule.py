@@ -16,6 +16,8 @@ class WebsocketModule():
 
     def NewClientws(self,client, server):
         print("New client connected and was given id %d" % client['id'], client["address"])
+        if len(self.application.network_ssid)>0:
+            self.send_message_to_all("networks",self.application.network_ssid)
 
 
     def send_message_to_all(self, command = None, data = None):

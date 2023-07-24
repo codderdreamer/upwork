@@ -20,6 +20,13 @@ class Application():
         self.flask_module = FlaskModule(__name__)
         self.flask_module.run(BootError)
 
+        self.network_ssid = {}
+
+
+
+
+
+
         os.system('pwd')
         os.system('touch network.txt')
         os.system("nmcli dev wifi > network.txt")
@@ -27,19 +34,18 @@ class Application():
         file = open("network.txt",'r')
         lines = file.readlines()
         i=0
-        network_ssid = {}
         ssid = None
         for line in lines:
             line = line.split("        ")[1].split(" ")
             if len(line) > 2:
                 ssid = line[2]
-                if (not (ssid in network_ssid.values())) and (not ssid == ""):
-                    network_ssid[i] = ssid
+                if (not (ssid in self.network_ssid.values())) and (not ssid == ""):
+                    self.network_ssid[i] = ssid
                     i+=1
 
-        print("result: ", network_ssid)
+        print("result: ", self.network_ssid)
 
-        self.websocket_module.send_message_to_all("networks",network_ssid)
+        self.websocket_module.send_message_to_all("networks",self.network_ssid)
 
 
 
