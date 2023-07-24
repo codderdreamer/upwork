@@ -33,7 +33,7 @@ class Application():
             line = line.split("        ")[1].split(" ")
             if len(line) > 2:
                 ssid = line[2]
-                if not ssid in network_ssid and not ssid == "":
+                if (not (ssid in network_ssid)) and (not ssid == ""):
                     network_ssid[i] = ssid
                     i+=1
 
