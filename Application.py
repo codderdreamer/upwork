@@ -39,7 +39,7 @@ class Application():
 
         print("result: ", network_ssid)
 
-        # self.websocket_module.send_message_to_all("networks",)
+        self.websocket_module.send_message_to_all("networks",network_ssid)
 
 
 
