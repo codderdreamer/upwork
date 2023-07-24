@@ -1,6 +1,7 @@
 import websocket_server
 import json
 import threading
+from Utils import *
 
 class WebsocketModule():
     def __init__(self,application):
@@ -16,8 +17,9 @@ class WebsocketModule():
 
     def NewClientws(self,client, server):
         print("New client connected and was given id %d" % client['id'], client["address"])
-        if len(self.application.network_ssid)>0:
-            self.send_message_to_all("networks",self.application.network_ssid)
+        scan_network()
+        # if len(self.application.network_ssid)>0:
+        #     self.send_message_to_all("networks",self.application.network_ssid)
 
 
     def send_message_to_all(self, command = None, data = None):

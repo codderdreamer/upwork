@@ -4,6 +4,7 @@ import time
 import subprocess
 import keyboard
 import os
+from Utils import *
 
 BootError=False
 
@@ -22,30 +23,14 @@ class Application():
 
         self.network_ssid = {}
 
+        scan_network()
 
 
 
 
 
-        os.system('pwd')
-        os.system('touch network.txt')
-        os.system("nmcli dev wifi > network.txt")
 
-        file = open("network.txt",'r')
-        lines = file.readlines()
-        i=0
-        ssid = None
-        for line in lines:
-            line = line.split("        ")[1].split(" ")
-            if len(line) > 2:
-                ssid = line[2]
-                if (not (ssid in self.network_ssid.values())) and (not ssid == ""):
-                    self.network_ssid[i] = ssid
-                    i+=1
-
-        print("result: ", self.network_ssid)
-
-        self.websocket_module.send_message_to_all("networks",self.network_ssid)
+        
 
 
 
