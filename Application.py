@@ -57,18 +57,18 @@ class Application():
 
 
         # keyboard girişlerini alıyor kumanda gelince bakılacak.
-        try:
+        # try:
 
-            while True:  # Loop to capture keys continuously
-                event = keyboard.read_event()  # Capture a keyboard event
+        #     while True:  # Loop to capture keys continuously
+        #         event = keyboard.read_event()  # Capture a keyboard event
 
-                if event.name == 'q' and event.event_type == 'down':
-                    print("Q key was pressed.")
-                    break
-                elif event.event_type == 'down':
-                    print(f"{event.name} key was pressed")
-        except Exception as e:
-            print(e)
+        #         if event.name == 'q' and event.event_type == 'down':
+        #             print("Q key was pressed.")
+        #             break
+        #         elif event.event_type == 'down':
+        #             print(f"{event.name} key was pressed")
+        # except Exception as e:
+        #     print(e)
 
        
 
