@@ -33,7 +33,7 @@ class Application():
             if len(line) > 2:
                 print(line[2])
                 ssid = line[2]
-                if not ssid in network_ssid:
+                if not ssid in network_ssid and not ssid == "":
                     network_ssid.append(ssid)
 
         print("result: ", network_ssid)
