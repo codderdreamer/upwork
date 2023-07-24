@@ -9,9 +9,9 @@ function connect(){
         if (incomingData.Command == "networks") {
             console.log("networks")
             console.log(incomingData.Data)
-            
 
-            for (let i = 0; i < incomingData.Data.length; i++) {
+            
+            for (let i = 0; i < Object.keys(incomingData.Data).length; i++) {
                 console.log( i)
                 var template = document.getElementById('network-template')
                 var clon = template.content.cloneNode(true);
