@@ -8,6 +8,7 @@ function connect(){
         console.log(incomingData)
         if (incomingData.Command == "networks") {
             console.log("networks")
+            console.log(incomingData.Data)
             
 
             for (let i = 0; i < incomingData.Data.length; i++) {
