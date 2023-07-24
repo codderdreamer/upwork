@@ -7,10 +7,11 @@ function connect(){
         incomingData = JSON.parse( e.data );
         console.log(incomingData)
         if (incomingData.Command == "networks") {
+            console.log("networks")
             
 
             for (let i = 0; i < incomingData.Data.length; i++) {
-                
+                console.log( i)
                 var template = document.getElementById('network-template')
                 var clon = template.content.cloneNode(true);
                 var section = document.getElementById("content")
