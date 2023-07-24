@@ -20,7 +20,8 @@ class Application():
 
         # using the check_output() for having the network term retrieval
         try:
-            devices = subprocess.check_output(['netsh','wlan','show','network'])
+            # devices = subprocess.check_output(['netsh','wlan','show','network'])
+            devices = subprocess.check_output(['wlan','show','network'])
             
             # decode it to strings
             devices = devices.decode('utf-8')
