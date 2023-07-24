@@ -26,11 +26,18 @@ class Application():
         file = open("network.txt",'r')
         lines = file.readlines()
         i=0
-        network = []
+        network_ssid = []
+        ssid = None
         for line in lines:
-            a = line.split("        ")[1].split(" ")
-            if len(a) > 2:
-                print(a[2])
+            line = line.split("        ")[1].split(" ")
+            if len(line) > 2:
+                print(line[2])
+                ssid = line[2]
+                if not ssid in network_ssid:
+                    network_ssid.append(ssid)
+
+        print("result: ", network_ssid)
+
             
         
 
