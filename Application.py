@@ -23,7 +23,7 @@ class Application():
         os.system('touch network.txt')
         os.system("nmcli dev wifi > network.txt")
 
-        file = open("home/pi/upwork/network.txt",'r')
+        file = open("network.txt",'r')
         lines = file.readlines()
         i=0
         network = []
