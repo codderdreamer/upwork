@@ -1,0 +1,26 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(53, 53, 53);
+    color: rgb(241, 241, 241);
+}
+
+a{
+    color: white;
+}
+
+a:link {
+    text-decoration: none;
+  }
+  
+  a:visited {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  a:active {
+    text-decoration: underline;
+  }
