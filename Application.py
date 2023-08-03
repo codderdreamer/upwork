@@ -25,6 +25,8 @@ class Application():
 
         scan_network(self)
 
+        threading.Thread(target=self.key_control, daemon=True).start()
+
 
 
 
