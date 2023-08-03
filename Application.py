@@ -28,19 +28,6 @@ class Application():
 
 
 
-
-
-        
-
-
-
-            
-        
-
-       
-
-
-
         # keyboard girişlerini alıyor kumanda gelince bakılacak.
         # try:
 
@@ -54,6 +41,19 @@ class Application():
         #             print(f"{event.name} key was pressed")
         # except Exception as e:
         #     print(e)
+
+    def key_control(self):
+        while True:  # Loop to capture keys continuously
+            try:
+                event = keyboard.read_event()  # Capture a keyboard event
+
+                if event.name == 'q' and event.event_type == 'down':
+                    print("Q key was pressed.")
+                    break
+                elif event.event_type == 'down':
+                    print(f"{event.name} key was pressed")
+            except Exception as e:
+                print(e)
 
 
 Application()
