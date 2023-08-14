@@ -58,6 +58,12 @@ class Application():
                     break
                 elif event.event_type == 'down':
                     print(f"{event.name} key was pressed")
+                    self.websocket_module.send_message_to_all(event.name)
+
+                   
+
+            
+            
             except Exception as e:
                 print(e)
 
