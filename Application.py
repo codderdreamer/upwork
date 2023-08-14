@@ -48,14 +48,33 @@ class Application():
         # except Exception as e:
         #     print(e)
 
+    def key1(self):
+        print('ctrl+shift+1**')
+
+    def key2(self):
+        print('ctrl+shift+2**')
+
+    def key3(self):
+        print('ctrl+shift+3**')
+
+    def key4(self):
+        print('ctrl+shift+4**')
+
+    def key5(self):
+        print('ctrl+shift+5**')
+
+    def key6(self):
+        print('ctrl+shift+6**')
+
     def key_control(self):
         time_start = time.time()
         time_finish = time.time()
-        keyboard.add_hotkey('ctrl+shift+1', print('ctrl+shift+1**'))
-        keyboard.add_hotkey('ctrl+shift+2', print('ctrl+shift+2**'))
-        keyboard.add_hotkey('ctrl+shift+3', print('ctrl+shift+3**'))
-        keyboard.add_hotkey('ctrl+shift+4', print('ctrl+shift+4**'))
-        keyboard.add_hotkey('ctrl+shift+5', print('ctrl+shift+5**'))
+        keyboard.add_hotkey('ctrl+shift+1', self.key1)
+        keyboard.add_hotkey('ctrl+shift+2', self.key2)
+        keyboard.add_hotkey('ctrl+shift+3', self.key3)
+        keyboard.add_hotkey('ctrl+shift+4', self.key4)
+        keyboard.add_hotkey('ctrl+shift+5', self.key5)
+        keyboard.add_hotkey('ctrl+shift+6', self.key6)
 
         while True:  # Loop to capture keys continuously
             try:
