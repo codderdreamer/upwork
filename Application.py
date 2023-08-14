@@ -55,6 +55,7 @@ class Application():
             try:
                 time_start = time.time()
                 event = keyboard.read_event()  # Capture a keyboard event
+                print(event)
                 # print(f"{event.name} key was pressed")
                 # print(time_start-time_finish)
                 time_finish = time.time()
