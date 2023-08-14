@@ -55,7 +55,7 @@ class Application():
             try:
                 time_start = time.time()
                 #event = keyboard.read_event()  # Capture a keyboard event
-                event = keyboard.read_hotkey()
+                event = keyboard.read_hotkey(suppress=True)
                 print("event:",event)
                 print("event capitalize:",event.capitalize())
                 print("event casefold:",event.casefold())
