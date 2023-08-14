@@ -1,5 +1,14 @@
 
 import os
+import time
+
+def turn_on_network():
+    try:
+        os.system('sudo systemctl restart NetworkManager')
+        os.system('nmcli r wifi on')
+        time.sleep(7)
+    except Exception as e:
+        print(e)
 
 
 def scan_network(application):

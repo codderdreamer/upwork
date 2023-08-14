@@ -23,7 +23,9 @@ class Application():
 
         self.network_ssid = {}
 
-        scan_network(self)
+        # scan_network(self)
+        turn_on_network()
+        threading.Thread(target=scan_network, args=(self,), daemon=True).start()
 
         threading.Thread(target=self.key_control, daemon=True).start()
 
