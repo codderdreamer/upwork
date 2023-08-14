@@ -54,7 +54,9 @@ class Application():
         while True:  # Loop to capture keys continuously
             try:
                 time_start = time.time()
-                event = keyboard.read_event()  # Capture a keyboard event
+                #event = keyboard.read_event()  # Capture a keyboard event
+                event = keyboard.read_hotkey()
+                print("event:",event)
                 print("scan_code:",event.scan_code)
                 # print(f"{event.name} key was pressed")
                 # print(time_start-time_finish)
