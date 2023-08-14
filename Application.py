@@ -49,16 +49,22 @@ class Application():
         #     print(e)
 
     def key_control(self):
+        time_start = time.time()
+        time_finish = time.time()
         while True:  # Loop to capture keys continuously
             try:
+                time_start = time.time()
                 event = keyboard.read_event()  # Capture a keyboard event
+                print(f"{event.name} key was pressed")
+                if time_finish - time_start > 1:
+                    time_finish = time.time()
 
-                if event.name == 'q' and event.event_type == 'down':
-                    print("Q key was pressed.")
-                    break
-                elif event.event_type == 'down':
-                    print(f"{event.name} key was pressed")
-                    self.websocket_module.send_message_to_all(event.name)
+                    if event.name == 'q' and event.event_type == 'down':
+                        print("Q key was pressed.")
+                        break
+                    elif event.event_type == 'down':
+                        print(f"{event.name} key was pressed********************")
+                        self.websocket_module.send_message_to_all(event.name)
 
                    
 
