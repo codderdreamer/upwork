@@ -57,17 +57,17 @@ class Application():
                 #event = keyboard.read_event()  # Capture a keyboard event
                 event = keyboard.read_hotkey()
                 print("event:",event)
-                print("scan_code:",event.scan_code)
-                # print(f"{event.name} key was pressed")
-                # print(time_start-time_finish)
-                time_finish = time.time()
+                # print("scan_code:",event.scan_code)
+                # # print(f"{event.name} key was pressed")
+                # # print(time_start-time_finish)
+                # time_finish = time.time()
 
-                if event.name == 'q' and event.event_type == 'down':
-                    print("Q key was pressed.")
-                    break
-                elif event.event_type == 'down':
-                    print(f"{event.name} key was pressed********************")
-                    self.websocket_module.send_message_to_all(event.name)
+                # if event.name == 'q' and event.event_type == 'down':
+                #     print("Q key was pressed.")
+                #     break
+                # elif event.event_type == 'down':
+                #     print(f"{event.name} key was pressed********************")
+                #     self.websocket_module.send_message_to_all(event.name)
 
                    
 
