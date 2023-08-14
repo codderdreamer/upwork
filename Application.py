@@ -29,6 +29,8 @@ class Application():
 
         threading.Thread(target=self.key_control, daemon=True).start()
 
+        os.system("startx -- -nocursor")
+
 
 
 
