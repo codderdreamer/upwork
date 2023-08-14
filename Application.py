@@ -51,6 +51,12 @@ class Application():
     def key_control(self):
         time_start = time.time()
         time_finish = time.time()
+        keyboard.add_hotkey('ctrl+shift+1', print('ctrl+shift+1**'))
+        keyboard.add_hotkey('ctrl+shift+2', print('ctrl+shift+2**'))
+        keyboard.add_hotkey('ctrl+shift+3', print('ctrl+shift+3**'))
+        keyboard.add_hotkey('ctrl+shift+4', print('ctrl+shift+4**'))
+        keyboard.add_hotkey('ctrl+shift+5', print('ctrl+shift+5**'))
+
         while True:  # Loop to capture keys continuously
             try:
                 time_start = time.time()
