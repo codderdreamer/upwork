@@ -52,7 +52,6 @@ class Application():
         while True:  # Loop to capture keys continuously
             try:
                 event = keyboard.read_event()  # Capture a keyboard event
-                print(event)
 
                 if event.name == 'q' and event.event_type == 'down':
                     print("Q key was pressed.")
