@@ -36,7 +36,6 @@ class Application():
 
 
     def key_counter(self):
-        print('************************* ctrl+shift+1',"self.key_down_press",self.key_down_press,"self.counter",self.counter)
         if self.key_down_press==0:
             self.counter += 1
             if self.counter == 2:
@@ -48,52 +47,51 @@ class Application():
 
 
     def key1(self):
-        # print('************************* ctrl+shift+1',"self.key_down_press",self.key_down_press,"self.counter",self.counter)
         if self.key_counter():
-            print('************************* ctrl+shift+1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+            print('************************* ctrl+shift+1 ')
 
     def key2(self):
-        if self.key_down_press == 1:
+        if self.key_counter():
             print('************************* ctrl+shift+2')
 
     def key3(self):
-        if self.key_down_press == 1:
+        if self.key_counter():
             print('************************* ctrl+shift+3')
 
     def key4(self):
-        if self.key_down_press == 1:
+        if self.key_counter():
             print('************************* ctrl+shift+4')
 
     def key5(self):
-        if self.key_down_press == 1:
+        if self.key_counter():
             print('************************* ctrl+shift+5')
 
     def key6(self):
-        if self.key_down_press == 1:
+        if self.key_counter():
             print('************************* ctrl+shift+6')
 
     def key7(self):
-        if self.key_down_press == 1:
+        if self.key_counter():
             print('************************* ctrl+shift+7')
 
     def key_up(self):
-        if self.key_down_press == 1:
+        if self.key_counter():
             print('************************* up')
 
     def key_down(self):
-        if self.key_down_press == 1:
+        if self.key_counter():
             print('************************* down')
 
     def key_left(self):
-        if self.key_down_press == 1:
+        if self.key_counter():
             print('************************* left')
 
     def key_right(self):
-        if self.key_down_press == 1:
+        if self.key_counter():
             print('************************* right')
 
     def key_enter(self):
-        if self.key_down_press == 1:
+        if self.key_counter():
             print('************************* enter')
 
     def key_control(self):
@@ -114,10 +112,10 @@ class Application():
             try:
                 event = keyboard.read_event()
                 if event.event_type == keyboard.KEY_DOWN:
-                    print("event down:",event)
+                    # print("event down:",event)
                     self.key_down_press += 1
                 if event.event_type == keyboard.KEY_UP:
-                    print("event up:",event)
+                    # print("event up:",event)
                     self.key_down_press = 0
 
 
