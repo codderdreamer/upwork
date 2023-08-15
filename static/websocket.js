@@ -19,10 +19,6 @@ function connect(){
                 div.innerText = incomingData.Data[i]
                 console.log("incomingData.Data[i]",incomingData.Data[i])
             }
-
-
-            
-
         }
 
 
