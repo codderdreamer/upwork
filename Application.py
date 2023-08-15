@@ -116,9 +116,11 @@ class Application():
                 if event.event_type == keyboard.KEY_DOWN:
                     # print("event down:",event)
                     self.key_down_press += 1
+                    print("arttı",self.key_down_press)
                 if event.event_type == keyboard.KEY_UP:
                     # print("event up:",event)
                     self.key_down_press = 0
+                    print("sıfr",self.key_down_press)
 
 
             except Exception as e:
