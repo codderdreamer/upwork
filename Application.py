@@ -38,7 +38,7 @@ class Application():
     def key_counter(self):
         if self.key_down_press==0:
             self.counter += 1
-            if self.counter == 3:
+            if self.counter == 2:
                 return True
         else:
             self.counter = 0
