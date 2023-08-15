@@ -36,7 +36,6 @@ class Application():
 
 
     def key_counter(self):
-        print(self.key_down_press,self.counter)
         if self.key_down_press==0:
             self.counter += 1
             if self.counter == 1:
@@ -50,50 +49,62 @@ class Application():
     def key1(self):
         if self.key_counter():
             print('************************* ctrl+shift+1 ')
+            self.websocket_module.send_message_to_all("ctrl+shift+1")
 
     def key2(self):
         if self.key_counter():
             print('************************* ctrl+shift+2')
+            self.websocket_module.send_message_to_all("ctrl+shift+2")
 
     def key3(self):
         if self.key_counter():
             print('************************* ctrl+shift+3')
+            self.websocket_module.send_message_to_all("ctrl+shift+3")
 
     def key4(self):
         if self.key_counter():
             print('************************* ctrl+shift+4')
+            self.websocket_module.send_message_to_all("ctrl+shift+4")
 
     def key5(self):
         if self.key_counter():
             print('************************* ctrl+shift+5')
+            self.websocket_module.send_message_to_all("ctrl+shift+5")
 
     def key6(self):
         if self.key_counter():
             print('************************* ctrl+shift+6')
+            self.websocket_module.send_message_to_all("ctrl+shift+6")
 
     def key7(self):
         if self.key_counter():
             print('************************* ctrl+shift+7')
+            self.websocket_module.send_message_to_all("ctrl+shift+7")
 
     def key_up(self):
         if self.key_counter():
             print('************************* up')
+            self.websocket_module.send_message_to_all("up")
 
     def key_down(self):
         if self.key_counter():
             print('************************* down')
+            self.websocket_module.send_message_to_all("down")
 
     def key_left(self):
         if self.key_counter():
             print('************************* left')
+            self.websocket_module.send_message_to_all("left")
 
     def key_right(self):
         if self.key_counter():
             print('************************* right')
+            self.websocket_module.send_message_to_all("right")
 
     def key_enter(self):
         if self.key_counter():
             print('************************* enter')
+            self.websocket_module.send_message_to_all("enter")
 
     def key_control(self):
         keyboard.add_hotkey('ctrl+shift+1', self.key1)
@@ -112,17 +123,11 @@ class Application():
         while True:  # Loop to capture keys continuously
             try:
                 event = keyboard.read_event()
-                # print(event, event.event_type)
                 if event.event_type == keyboard.KEY_DOWN:
-                    # print("event down:",event)
                     self.key_down_press += 1
-                    # print("arttı",self.key_down_press)
                 if event.event_type == keyboard.KEY_UP:
-                    # print("event up:",event)
                     self.key_down_press = 0
                     self.counter = 0
-                    # print("sıfr",self.key_down_press)
-
 
             except Exception as e:
                 print(e)
@@ -140,28 +145,13 @@ while True:
 
 
 
-                #event = keyboard.read_event()  # Capture a keyboard event
-                # event = keyboard.read_key(suppress=False)
-                # print("event capitalize:",event.capitalize())
-                # print("event casefold:",event.casefold())
-                # #print("event center:",event.center())
-                # #print("event count:",event.count())
-                # print("event encode:",event.encode())
-                #  #print("event endswith:",event.endswith())
-                # print("event expandtabs:",event.expandtabs())
-                #  #print("event find:",event.find())
-                #  #print("event format:",event.format())
-                #  #print("event format_map:",event.format_map())
-                #  #print("event index:",event.index())
-                # print("event isalnum:",event.isalnum())
-                # print("scan_code:",event.scan_code)
-                # # print(f"{event.name} key was pressed")
-                # # print(time_start-time_finish)
-                # time_finish = time.time()
 
-                # if event.name == 'q' and event.event_type == 'down':
-                #     print("Q key was pressed.")
-                #     break
-                # elif event.event_type == 'down':
-                #     print(f"{event.name} key was pressed********************")
-                #     self.websocket_module.send_message_to_all(event.name)
+
+#event = keyboard.read_event()  # Capture a keyboard event
+
+# if event.name == 'q' and event.event_type == 'down':
+#     print("Q key was pressed.")
+#     break
+# elif event.event_type == 'down':
+#     print(f"{event.name} key was pressed********************")
+#     self.websocket_module.send_message_to_all(event.name)
