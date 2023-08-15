@@ -80,10 +80,11 @@ class Application():
 
         while True:  # Loop to capture keys continuously
             try:
-                event = keyboard.read_key(suppress=False)
+                event = keyboard.read_event()  # Capture a keyboard event
                 if event.event_type == 'down':
-                    print("event:",event)
-
+                    print("event down:",event)
+                if event.event_type == keyboard.KEY_UP:
+                    print("event up:",event)
 
             
             except Exception as e:
@@ -103,6 +104,7 @@ while True:
 
 
                 #event = keyboard.read_event()  # Capture a keyboard event
+                # event = keyboard.read_key(suppress=False)
                 # print("event capitalize:",event.capitalize())
                 # print("event casefold:",event.casefold())
                 # #print("event center:",event.center())
