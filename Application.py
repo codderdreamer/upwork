@@ -112,16 +112,16 @@ class Application():
         while True:  # Loop to capture keys continuously
             try:
                 event = keyboard.read_event()
-                print(event, event.event_type)
+                # print(event, event.event_type)
                 if event.event_type == keyboard.KEY_DOWN:
                     # print("event down:",event)
                     self.key_down_press += 1
-                    print("arttı",self.key_down_press)
+                    # print("arttı",self.key_down_press)
                 if event.event_type == keyboard.KEY_UP:
                     # print("event up:",event)
                     self.key_down_press = 0
                     self.counter = 0
-                    print("sıfr",self.key_down_press)
+                    # print("sıfr",self.key_down_press)
 
 
             except Exception as e:
