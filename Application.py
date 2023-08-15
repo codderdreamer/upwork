@@ -32,12 +32,20 @@ class Application():
         # os.system("startx -- -nocursor")
 
         self.key_down_press = 0
+        self.counter = 0
+
+
+    def key_counter(self):
+        if self.key_down_press==0:
+            self.counter += 1
+            if self.counter == 3:
+                return True
+        return False
 
 
 
     def key1(self):
-        print('************************* ctrl+shift+1      **** ',self.key_down_press)
-        if self.key_down_press == 1:
+        if self.key_counter():
             print('************************* ctrl+shift+1')
 
     def key2(self):
