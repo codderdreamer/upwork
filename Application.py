@@ -50,7 +50,7 @@ class Application():
     def key1(self):
         # print('************************* ctrl+shift+1',"self.key_down_press",self.key_down_press,"self.counter",self.counter)
         if self.key_counter():
-            print('************************* ctrl+shift+1')
+            print('************************* ctrl+shift+1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 
     def key2(self):
         if self.key_down_press == 1:
