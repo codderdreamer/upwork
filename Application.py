@@ -39,7 +39,7 @@ class Application():
         print(self.key_down_press,self.counter)
         if self.key_down_press==0:
             self.counter += 1
-            if self.counter == 2:
+            if self.counter == 1:
                 return True
         else:
             self.counter = 0
