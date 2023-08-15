@@ -111,6 +111,7 @@ class Application():
         while True:  # Loop to capture keys continuously
             try:
                 event = keyboard.read_event()
+                print(event)
                 if event.event_type == keyboard.KEY_DOWN:
                     # print("event down:",event)
                     self.key_down_press += 1
