@@ -101,11 +101,12 @@ class Application():
             try:
                 event = keyboard.read_event()
                 if event.event_type == keyboard.KEY_DOWN:
-                    # print("event down:",event)
+                    print("event down:",event)
                     self.key_down_press += 1
                 if event.event_type == keyboard.KEY_UP:
-                    # print("event up:",event)
+                    print("event up:",event)
                     self.key_down_press = 0
+
 
             except Exception as e:
                 print(e)
