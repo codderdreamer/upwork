@@ -75,6 +75,10 @@ class Application():
         if self.key_down_press == 1:
             print('************************* left')
 
+    def key_right(self):
+        if self.key_down_press == 1:
+            print('************************* right')
+
     def key_enter(self):
         if self.key_down_press == 1:
             print('************************* enter')
