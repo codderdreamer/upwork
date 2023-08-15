@@ -120,6 +120,7 @@ class Application():
                 if event.event_type == keyboard.KEY_UP:
                     # print("event up:",event)
                     self.key_down_press = 0
+                    self.counter = 0
                     print("sıfr",self.key_down_press)
 
 
