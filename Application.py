@@ -40,6 +40,8 @@ class Application():
             self.counter += 1
             if self.counter == 3:
                 return True
+        else:
+            self.counter = 0
         return False
 
 
