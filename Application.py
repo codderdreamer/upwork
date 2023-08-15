@@ -36,8 +36,8 @@ class Application():
 
 
     def key1(self):
-        if self.key_down_press == 1:
-            print('************************* ctrl+shift+1')
+        # if self.key_down_press == 1:
+        print('************************* ctrl+shift+1')
 
     def key2(self):
         if self.key_down_press == 1:
