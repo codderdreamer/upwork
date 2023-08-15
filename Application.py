@@ -70,8 +70,6 @@ class Application():
         print('ctrl+shift+7**')
 
     def key_control(self):
-        time_start = time.time()
-        time_finish = time.time()
         keyboard.add_hotkey('ctrl+shift+1', self.key1)
         keyboard.add_hotkey('ctrl+shift+2', self.key2)
         keyboard.add_hotkey('ctrl+shift+3', self.key3)
@@ -82,10 +80,29 @@ class Application():
 
         while True:  # Loop to capture keys continuously
             try:
-                time_start = time.time()
-                #event = keyboard.read_event()  # Capture a keyboard event
                 event = keyboard.read_key(suppress=False)
-                print("event:",event)
+                if event.event_type == 'down':
+                    print("event:",event)
+
+
+            
+            except Exception as e:
+                print(e)
+
+
+Application()
+while True:
+    time.sleep(10)
+    if BootError:
+        print("BootError")
+        time.sleep(10)
+        break
+
+
+
+
+
+                #event = keyboard.read_event()  # Capture a keyboard event
                 # print("event capitalize:",event.capitalize())
                 # print("event casefold:",event.casefold())
                 # #print("event center:",event.center())
@@ -109,19 +126,3 @@ class Application():
                 # elif event.event_type == 'down':
                 #     print(f"{event.name} key was pressed********************")
                 #     self.websocket_module.send_message_to_all(event.name)
-
-                   
-
-            
-            
-            except Exception as e:
-                print(e)
-
-
-Application()
-while True:
-    time.sleep(10)
-    if BootError:
-        print("BootError")
-        time.sleep(10)
-        break
