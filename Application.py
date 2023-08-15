@@ -31,43 +31,53 @@ class Application():
 
         # os.system("startx -- -nocursor")
 
+        self.key_down_press = 0
 
 
-
-        # keyboard girişlerini alıyor kumanda gelince bakılacak.
-        # try:
-
-        #     while True:  # Loop to capture keys continuously
-        #         event = keyboard.read_event()  # Capture a keyboard event
-
-        #         if event.name == 'q' and event.event_type == 'down':
-        #             print("Q key was pressed.")
-        #             break
-        #         elif event.event_type == 'down':
-        #             print(f"{event.name} key was pressed")
-        # except Exception as e:
-        #     print(e)
 
     def key1(self):
-        print('ctrl+shift+1**')
+        if self.key_down_press == 1:
+            print('************************* ctrl+shift+1')
 
     def key2(self):
-        print('ctrl+shift+2**')
+        if self.key_down_press == 1:
+            print('************************* ctrl+shift+2')
 
     def key3(self):
-        print('ctrl+shift+3**')
+        if self.key_down_press == 1:
+            print('************************* ctrl+shift+3')
 
     def key4(self):
-        print('ctrl+shift+4**')
+        if self.key_down_press == 1:
+            print('************************* ctrl+shift+4')
 
     def key5(self):
-        print('ctrl+shift+5**')
+        if self.key_down_press == 1:
+            print('************************* ctrl+shift+5')
 
     def key6(self):
-        print('ctrl+shift+6**')
+        if self.key_down_press == 1:
+            print('************************* ctrl+shift+6')
 
     def key7(self):
-        print('ctrl+shift+7**')
+        if self.key_down_press == 1:
+            print('************************* ctrl+shift+7')
+
+    def key_up(self):
+        if self.key_down_press == 1:
+            print('************************* up')
+
+    def key_down(self):
+        if self.key_down_press == 1:
+            print('************************* down')
+
+    def key_left(self):
+        if self.key_down_press == 1:
+            print('************************* left')
+
+    def key_enter(self):
+        if self.key_down_press == 1:
+            print('************************* enter')
 
     def key_control(self):
         keyboard.add_hotkey('ctrl+shift+1', self.key1)
@@ -77,16 +87,22 @@ class Application():
         keyboard.add_hotkey('ctrl+shift+5', self.key5)
         keyboard.add_hotkey('ctrl+shift+6', self.key6)
         keyboard.add_hotkey('ctrl+shift+7', self.key7)
+        keyboard.add_hotkey('up',self.key_up)
+        keyboard.add_hotkey('down',self.key_down)
+        keyboard.add_hotkey('right',self.key_right)
+        keyboard.add_hotkey('left',self.key_left)
+        keyboard.add_hotkey('enter',self.key_enter)
 
         while True:  # Loop to capture keys continuously
             try:
-                event = keyboard.read_event()  # Capture a keyboard event
-                if event.event_type == 'down':
-                    print("event down:",event)
+                event = keyboard.read_event()
+                if event.event_type == keyboard.KEY_DOWN:
+                    # print("event down:",event)
+                    self.key_down_press += 1
                 if event.event_type == keyboard.KEY_UP:
-                    print("event up:",event)
+                    # print("event up:",event)
+                    self.key_down_press = 0
 
-            
             except Exception as e:
                 print(e)
 
