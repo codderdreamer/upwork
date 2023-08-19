@@ -32,9 +32,9 @@ class Application():
         for line in lines:
             if "eth0" in line:
                 print("eth0:",line)
-            elif "wlan0" in lines:
+            elif "wlan0" in line:
                 print("wlan0",line)
-                
+
 
 
 
