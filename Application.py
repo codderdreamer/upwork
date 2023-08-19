@@ -21,18 +21,37 @@ class Application():
         self.flask_module = FlaskModule(__name__)
         self.flask_module.run(BootError)
 
-        self.network_ssid = {}
+        
 
-        # scan_network(self)
-        turn_on_network()
-        threading.Thread(target=scan_network, args=(self,), daemon=True).start()
 
-        threading.Thread(target=self.key_control, daemon=True).start()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        # self.network_ssid = {}
+
+        # # scan_network(self)
+        # turn_on_network()
+        # threading.Thread(target=scan_network, args=(self,), daemon=True).start()
+
+        # threading.Thread(target=self.key_control, daemon=True).start()
 
         # os.system("startx -- -nocursor")
 
-        self.key_down_press = 0
-        self.counter = 0
+        # self.key_down_press = 0
+        # self.counter = 0
 
 
     def key_counter(self):
