@@ -35,9 +35,9 @@ class Application():
             print("wifi.json dosyası açılamadı",e)
 
         # wifi dosyasında kayıtları tara
-        for data_key, data_value in data.items():
-            print("data_value", data_value )
-            for wifi in data_value.items():
+        for data_key, wifi in data.items():
+            print("wifi", wifi )
+            if self.wifi_connected == False:
                 print(wifi["ssid"])
                 print(wifi["password"])
                 print(wifi["priority"])
