@@ -21,7 +21,15 @@ class Application():
         self.flask_module = FlaskModule(__name__)
         self.flask_module.run(BootError)
 
-        
+        # Network'ü aktif et ilk başta aktif olmuyor
+        os.system('sudo systemctl restart NetworkManager')
+
+        # İnternet bağlımı diye sorgula
+        os.system('touch network_status.txt')
+        os.system('nmcli dev status > network_status.txt')
+        file = open("network.txt",'r')
+        lines = file.readlines()
+        print(lines)
 
 
 
