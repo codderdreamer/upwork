@@ -56,7 +56,6 @@ class Application():
             print(line)
             if " connected" in line:
                     print("Wifi connected.")
-                    print(line)
                     self.wifi_connected = True
 
         if self.wifi_connected:
@@ -81,7 +80,6 @@ class Application():
                         print(line)
                         if " connected" in line:
                                 print("Wifi connected.")
-                                print(line)
                                 self.wifi_connected = True
                                 print("https://momentum.visi.help/ sayfasına git")
 
