@@ -52,8 +52,9 @@ class Application():
         file = open("network_status.txt",'r')
         lines = file.readlines()
         for line in lines:
+            print(line)
             if "connected" in line:
-                    print("Wifi ağına bağlı.")
+                    print("Wifi connected.")
                     print(line)
                     self.wifi_connected = True
 
@@ -76,8 +77,9 @@ class Application():
                     file = open("network_status.txt",'r')
                     lines = file.readlines()
                     for line in lines:
+                        print(line)
                         if "connected" in line:
-                                print("Wifi ağına bağlı.")
+                                print("Wifi connected.")
                                 print(line)
                                 self.wifi_connected = True
                                 print("https://momentum.visi.help/ sayfasına git")
