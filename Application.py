@@ -5,6 +5,7 @@ import subprocess
 import keyboard
 import os
 from Utils import *
+import json
 
 BootError=False
 
@@ -12,6 +13,7 @@ BootError=False
 class Application():
     def __init__(self):
         self.wifi_devices = []
+        self.wifi_connected = False
 
         # Websocketi Başlat
         self.websocket_module = WebsocketModule(self)
@@ -24,16 +26,42 @@ class Application():
         # Network'ü aktif et ilk başta aktif olmuyor
         os.system('sudo systemctl restart NetworkManager')
 
+        # wifi.json dosyasını al
+        try:
+            with open("wifi.json", "r") as jsonfile:
+                data = json.load(jsonfile)
+                print(data)
+        except Exception as e:
+            print("wifi.json dosyası açılamadı",e)
+
+        # wifi dosyasında kayıtları tara
+        for wifi_line in data:
+            print("wifi_line", wifi_line )
+            for wifi in wifi_line:
+                print(wifi["ssid"])
+                print(wifi["password"])
+
+
+        
+
+
+
+
         # İnternet bağlımı diye sorgula
         os.system('touch network_status.txt')
         os.system('nmcli dev status > network_status.txt')
         file = open("network_status.txt",'r')
         lines = file.readlines()
         for line in lines:
-            if "eth0" in line:
-                print("eth0:",line)
-            elif "wlan0" in line:
-                print("wlan0",line)
+            if "connected" in line:
+                    print("Wifi ağına bağlı.")
+                    print(line)
+                    self.wifi_connected = True
+        if self.wifi_connected:
+            print("https://momentum.visi.help/ sayfasına git")
+        else:
+            print("wifi seçici sayfasına git")
+
 
 
 
