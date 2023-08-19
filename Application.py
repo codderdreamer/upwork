@@ -54,7 +54,7 @@ class Application():
         lines = file.readlines()
         for line in lines:
             print(line)
-            if "\tconnected" in line:
+            if " connected" in line:
                     print("Wifi connected.")
                     print(line)
                     self.wifi_connected = True
@@ -79,7 +79,7 @@ class Application():
                     lines = file.readlines()
                     for line in lines:
                         print(line)
-                        if "\tconnected" in line:
+                        if " connected" in line:
                                 print("Wifi connected.")
                                 print(line)
                                 self.wifi_connected = True
