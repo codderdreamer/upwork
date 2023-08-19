@@ -48,19 +48,19 @@ class Application():
 
 
         # İnternet bağlımı diye sorgula
-        os.system('touch network_status.txt')
-        os.system('nmcli dev status > network_status.txt')
-        file = open("network_status.txt",'r')
-        lines = file.readlines()
-        for line in lines:
-            if "connected" in line:
-                    print("Wifi ağına bağlı.")
-                    print(line)
-                    self.wifi_connected = True
-        if self.wifi_connected:
-            print("https://momentum.visi.help/ sayfasına git")
-        else:
-            print("wifi seçici sayfasına git")
+        # os.system('touch network_status.txt')
+        # os.system('nmcli dev status > network_status.txt')
+        # file = open("network_status.txt",'r')
+        # lines = file.readlines()
+        # for line in lines:
+        #     if "connected" in line:
+        #             print("Wifi ağına bağlı.")
+        #             print(line)
+        #             self.wifi_connected = True
+        # if self.wifi_connected:
+        #     print("https://momentum.visi.help/ sayfasına git")
+        # else:
+        #     print("wifi seçici sayfasına git")
 
 
 
