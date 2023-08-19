@@ -27,9 +27,14 @@ class Application():
         # İnternet bağlımı diye sorgula
         os.system('touch network_status.txt')
         os.system('nmcli dev status > network_status.txt')
-        file = open("network.txt",'r')
+        file = open("network_status.txt",'r')
         lines = file.readlines()
-        print(lines)
+        for line in lines:
+            if "eth0" in line:
+                print("eth0:",line)
+            elif "wlan0" in lines:
+                print("wlan0",line)
+                
 
 
 
