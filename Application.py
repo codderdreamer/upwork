@@ -25,6 +25,7 @@ class Application():
 
         # Network'ü aktif et ilk başta aktif olmuyor
         os.system('sudo systemctl restart NetworkManager')
+        time.sleep(5)
 
         # wifi.json dosyasını al
         try:
