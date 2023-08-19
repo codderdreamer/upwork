@@ -35,33 +35,59 @@ class Application():
             print("wifi.json dosyası açılamadı",e)
 
         # wifi dosyasında kayıtları tara
-        for wifi_line in data:
-            print("wifi_line", wifi_line )
-            for wifi in wifi_line:
+        for data_key, data_value in data.items():
+            print("data_value", data_value )
+            for wifi in data_value.items():
                 print(wifi["ssid"])
                 print(wifi["password"])
+                print(wifi["priority"])
+                # bağlanmayı dene
+                if wifi["priority"] == "1":
+                    print('sudo nmcli dev wifi connect ' + wifi["ssid"] + ' password "' + wifi["password"] + '"')
+                    os.system('sudo nmcli dev wifi connect ' + wifi["ssid"] + ' password "' + wifi["password"] + '"')
+
+        # Bağlandı mı kontrol et
+        os.system('touch network_status.txt')
+        os.system('nmcli dev status > network_status.txt')
+        file = open("network_status.txt",'r')
+        lines = file.readlines()
+        for line in lines:
+            if "connected" in line:
+                    print("Wifi ağına bağlı.")
+                    print(line)
+                    self.wifi_connected = True
+
+        if self.wifi_connected:
+            print("https://momentum.visi.help/ sayfasına git")
+        else:
+            for data_key, data_value in data.items():
+                print("data_value", data_value )
+                if self.wifi_connected == False:
+                    for wifi in data_value.items():
+                        print(wifi["ssid"])
+                        print(wifi["password"])
+                        print(wifi["priority"])
+                        # bağlanmayı dene
+                        print('sudo nmcli dev wifi connect ' + wifi["ssid"] + ' password "' + wifi["password"] + '"')
+                        os.system('sudo nmcli dev wifi connect ' + wifi["ssid"] + ' password "' + wifi["password"] + '"')
+
+                        # Bağlandı mı kontrol et
+                        os.system('touch network_status.txt')
+                        os.system('nmcli dev status > network_status.txt')
+                        file = open("network_status.txt",'r')
+                        lines = file.readlines()
+                        for line in lines:
+                            if "connected" in line:
+                                    print("Wifi ağına bağlı.")
+                                    print(line)
+                                    self.wifi_connected = True
+                                    print("https://momentum.visi.help/ sayfasına git")
 
 
         
 
 
-
-
-        # İnternet bağlımı diye sorgula
-        # os.system('touch network_status.txt')
-        # os.system('nmcli dev status > network_status.txt')
-        # file = open("network_status.txt",'r')
-        # lines = file.readlines()
-        # for line in lines:
-        #     if "connected" in line:
-        #             print("Wifi ağına bağlı.")
-        #             print(line)
-        #             self.wifi_connected = True
-        # if self.wifi_connected:
-        #     print("https://momentum.visi.help/ sayfasına git")
-        # else:
-        #     print("wifi seçici sayfasına git")
-
+                
 
 
 
