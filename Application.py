@@ -25,7 +25,7 @@ class Application():
 
         # Network'ü aktif et ilk başta aktif olmuyor
         os.system('sudo systemctl restart NetworkManager')
-        time.sleep(3)
+        time.sleep(5)
 
         # wifi.json dosyasını al
         try:
@@ -54,7 +54,7 @@ class Application():
         lines = file.readlines()
         for line in lines:
             print(line)
-            if "connected" in line:
+            if "\tconnected" in line:
                     print("Wifi connected.")
                     print(line)
                     self.wifi_connected = True
@@ -79,7 +79,7 @@ class Application():
                     lines = file.readlines()
                     for line in lines:
                         print(line)
-                        if "connected" in line:
+                        if "\tconnected" in line:
                                 print("Wifi connected.")
                                 print(line)
                                 self.wifi_connected = True
