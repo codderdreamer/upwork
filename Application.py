@@ -109,7 +109,7 @@ class Application():
                 if "IN-USE" in line:
                     pass
                 else:
-                    line = line.split(" ")
+                    line = line.split("\t")
                     print("line",line)
 
 
