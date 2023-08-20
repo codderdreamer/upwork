@@ -16,6 +16,8 @@ class Application():
         self.wifi_connected = False
         self.wifi_name = ""
 
+        os.system('bash searchwifi.sh')
+
         # Websocketi Başlat
         self.websocket_module = WebsocketModule(self)
         self.websocket_module.run()
