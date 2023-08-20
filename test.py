@@ -1,3 +1,6 @@
-import os
+dene = {}
 
-os.system('bash searchwifi.sh')
+dene["ss"] = "fg"
+dene["s"] = "s"
+
+print(dene)

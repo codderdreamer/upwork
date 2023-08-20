@@ -119,6 +119,7 @@ class Application():
                         if word != "":
                             wifi.append(word)
                     # print("wifi",wifi)
+                    print(wifi[1],wifi[7])
                     self.wifi_list[wifi[1]] = wifi[7]
 
             print(self.wifi_list)
