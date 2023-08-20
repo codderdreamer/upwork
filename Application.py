@@ -92,16 +92,23 @@ class Application():
                             self.wifi_connected = True
                             print("https://momentum.visi.help/ sayfasına git")
 
+
+        time.sleep(3)
         # Önceden kaydedilmişlere bağlanamdıysa, wifi seçici sayfasını getir
         print("self.wifi_connected",self.wifi_connected)
 
-        time.sleep(3)
-        os.system('bash searchwifi.sh')
-
 
         if self.wifi_connected == False:
-
             # Hangi wifiler mevcut?
+            os.system('touch network.txt')
+            os.system('nmcli dev wifi > network.txt')
+            time.sleep(3)
+            file = open("network.txt",'r')
+            lines = file.readlines()
+            print(lines)
+
+
+
             # threading.Thread(target=get_wifi_list,daemon=True).start()
             # os.system('touch network.txt')
             # os.system('bash searchwifi.sh')
