@@ -115,7 +115,7 @@ class Application():
                 else:
                     line = line.split(" ")
                     wifi = []
-                    wifi_new = []
+                    wifi_name = ""
                     for word in line:
                         if word != "":
                             wifi.append(word)
@@ -127,13 +127,12 @@ class Application():
                             if "Infra" == word:
                                 print("break")
                                 break
-                            wifi_new.append(word)
-                            print("wifi_new",wifi_new)
+                            wifi_name = wifi_name + word
 
 
 
 
-                    self.wifi_list[wifi[1]] = wifi[7]
+                    self.wifi_list[wifi_name] = wifi[7]
 
             print(self.wifi_list)
 
