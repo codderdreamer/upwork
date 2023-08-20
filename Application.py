@@ -109,8 +109,12 @@ class Application():
                 if "IN-USE" in line:
                     pass
                 else:
-                    line = line.split("\t")
-                    print("line",line)
+                    line = line.split(" ")
+                    wifi = []
+                    for word in line:
+                        if word != " ":
+                            wifi.append(word)
+                    print("wifi",wifi)
 
 
 
