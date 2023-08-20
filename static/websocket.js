@@ -10,8 +10,11 @@ function connect(){
         console.log(window.location)
 
         if (incomingData.Command == "WifiPage") {
+            console.log(incomingData.Data)
             if(window.location != "http://192.168.1.138:5000/WifiPage"){
                 window.location = "http://192.168.1.138:5000/WifiPage";
+
+                
             }
             
         }
