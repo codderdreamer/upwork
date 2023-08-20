@@ -33,7 +33,7 @@ class Application():
 
         threading.Thread(target=scan_network,args=(self,),daemon=True).start()
 
-        threading.Thread(target=open,daemon=True).start()
+        # threading.Thread(target=open,daemon=True).start()
 
 
 
