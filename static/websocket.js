@@ -13,8 +13,12 @@ function connect(){
             console.log(incomingData.Data)
             if(window.location != "http://192.168.1.138:5000/WifiPage"){
                 window.location = "http://192.168.1.138:5000/WifiPage";
-
-                
+            }
+            else{
+                console.log("Wifi sayfasında")
+                for (const [key, value] of Object.entries(incomingData.Data)) {
+                    console.log(`${key}: ${value}`);
+                  }
             }
             
         }
