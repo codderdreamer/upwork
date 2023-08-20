@@ -15,6 +15,7 @@ class Application():
         self.wifi_devices = []
         self.wifi_connected = False
         self.wifi_name = ""
+        self.wifi_list = {}
 
         
 
@@ -98,6 +99,8 @@ class Application():
         print("self.wifi_connected",self.wifi_connected)
 
 
+
+
         if self.wifi_connected == False:
             # Hangi wifiler mevcut?
             os.system('touch network.txt')
@@ -105,6 +108,7 @@ class Application():
             time.sleep(3)
             file = open("network.txt",'r')
             lines = file.readlines()
+            self.wifi_list = []
             for line in lines:
                 if "IN-USE" in line:
                     pass
@@ -114,7 +118,13 @@ class Application():
                     for word in line:
                         if word != "":
                             wifi.append(word)
-                    print("wifi",wifi)
+                    # print("wifi",wifi)
+                    self.wifi_list[wifi[1]] = wifi[7]
+
+            print(self.wifi_list)
+
+
+
 
 
 
