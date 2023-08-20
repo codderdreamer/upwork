@@ -118,7 +118,7 @@ class Application():
                     for word in line:
                         if word != "":
                             wifi.append(word)
-                            print(wifi)
+                    print(wifi)
                     self.wifi_list[wifi[1]] = wifi[7]
 
             print(self.wifi_list)
