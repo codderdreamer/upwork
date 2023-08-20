@@ -3,7 +3,7 @@ import os
 import time
 import json
 
-def open():
+def open_web_browser():
     os.system("startx -- -nocursor")
 
 def scan_network(application):
