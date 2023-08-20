@@ -43,7 +43,6 @@ class FlaskModule():
         self.add_endpoint(endpoint="/", endpoint_name="/", handler=self.InitFlask)
         self.add_endpoint(endpoint="/WifiPage", endpoint_name="/WifiPage", handler=self.WifiPage)
         self.add_endpoint(endpoint="/VisihelpPage", endpoint_name="/VisihelpPage", handler=self.VisihelpPage)
-        self.add_endpoint(endpoint="/visihelp", endpoint_name="/visihelp", handler=self.visihelp)
 
         # Add action endpoints
         #self.add_endpoint(endpoint="/add_X", endpoint_name="/add_X", handler=self.add_X)
@@ -64,10 +63,7 @@ class FlaskModule():
         return render_template('WifiPage.html')
     
     def VisihelpPage(self):
-        return render_template('VisihelpPage.html')
-    
-    def visihelp(self):
-        return render_template('https://www.w3schools.com')
+        return render_template('VisihelpPage.html', iframe="https://momentum.visi.help/")
 
 
     def Test(self):
