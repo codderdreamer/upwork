@@ -41,6 +41,7 @@ def scan_network(application):
         # Bağlandıysa sayfayı aç
         if application.wifi_connected:
             print("https://momentum.visi.help/ sayfasına git")
+            application.websocket_module.send_message_to_all("VisihelpPage")
         # Bağlanmadıysa wifi dosyasını tara hepsini dene
         else:
             for data_key, wifi in data.items():
@@ -66,6 +67,7 @@ def scan_network(application):
                             print("Wifi connected.", application.wifi_name)
                             application.wifi_connected = True
                             print("https://momentum.visi.help/ sayfasına git")
+                            application.websocket_module.send_message_to_all("VisihelpPage")
 
 
         time.sleep(3)

@@ -10,8 +10,11 @@ function connect(){
         if (incomingData.Command == "WifiPage") {
             window.location = "http://localhost/WifiPage";
         }
+        else if(incomingData.Command == "VisihelpPage"){
+            window.location = "https://momentum.visi.help/"
+        }
 
-
+        
 
 
     }
