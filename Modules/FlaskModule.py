@@ -41,6 +41,7 @@ class FlaskModule():
     def add_all_endpoints(self):
         # Add root endpoint
         self.add_endpoint(endpoint="/", endpoint_name="/", handler=self.InitFlask)
+        self.add_endpoint(endpoint="/WifiPage", endpoint_name="/WifiPage", handler=self.WifiPage)
 
         # Add action endpoints
         #self.add_endpoint(endpoint="/add_X", endpoint_name="/add_X", handler=self.add_X)
@@ -56,6 +57,9 @@ class FlaskModule():
         # Dummy action
         return render_template('home.html')
         # Test it with curl 127.0.0.1:5000
+
+    def WifiPage(self):
+        return render_template('WifiPage.html')
 
     def Test(self):
         return render_template('test.html')

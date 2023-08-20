@@ -6,20 +6,12 @@ function connect(){
     {
         incomingData = JSON.parse( e.data );
         console.log(incomingData)
-        if (incomingData.Command == "networks") {
-            document.getElementById("content").innerHTML = ""
-            for (let i = 0; i < Object.keys(incomingData.Data).length; i++) {
-                console.log( i)
-                var template = document.getElementById('network-template')
-                var clon = template.content.cloneNode(true);
-                var section = document.getElementById("content")
-                section.appendChild(clon)
-                div = document.getElementById('network')
-                div.id = "network" + i.toString()
-                div.innerText = incomingData.Data[i]
-                console.log("incomingData.Data[i]",incomingData.Data[i])
-            }
+
+        if (incomingData.Command == "WifiPage") {
+            window.location = "http://localhost/WifiPage";
         }
+
+
 
 
     }

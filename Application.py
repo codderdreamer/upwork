@@ -99,8 +99,6 @@ class Application():
         print("self.wifi_connected",self.wifi_connected)
 
 
-
-
         if self.wifi_connected == False:
             # Hangi wifiler mevcut?
             os.system('touch network.txt')
@@ -119,13 +117,11 @@ class Application():
                     for word in line:
                         if word != "":
                             wifi.append(word)
-                    print("wifi",wifi)
                     for word in wifi:
                         if ":" in word:
                             pass
                         else:
                             if "Infra" == word:
-                                print("break")
                                 break
                             wifi_name = wifi_name + word + " "
 
@@ -133,34 +129,13 @@ class Application():
                         if "*" in word:
                             wifi_bar = word
 
-
-
-
                     self.wifi_list[wifi_name] = wifi_bar
 
             print(self.wifi_list)
-
-
-
-
-
-
-
-            # threading.Thread(target=get_wifi_list,daemon=True).start()
-            # os.system('touch network.txt')
-            # os.system('bash searchwifi.sh')
-            # os.system('sudo python test.py')
-            # time.sleep(5)
-            # file = open("network.txt",'r')
-            # lines = file.readlines()
-            # print(lines)
-
-
-
-
-
-
             print("Wifi selector sayfasına git")
+
+            self.websocket_module.send_message_to_all("WifiPage",self.wifi_list)
+
 
             # Hangi wifiler varsa göstermen lazım isimlerini
             # kumanda ile seçim yaptığında diğer sayfaya geçip şifresini klavyeden girebilmen lazım
