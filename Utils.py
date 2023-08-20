@@ -2,6 +2,9 @@
 import os
 import time
 
+def get_wifi_list():
+    os.system("nmcli dev wifi > network.txt")
+
 def turn_on_network():
     try:
         os.system('sudo systemctl restart NetworkManager')

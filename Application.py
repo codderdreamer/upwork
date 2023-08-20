@@ -95,7 +95,8 @@ class Application():
 
             # Hangi wifiler mevcut?
             os.system('touch network.txt')
-            os.system("nmcli dev wifi > network.txt")
+            threading.Thread(target=get_wifi_list,daemon=True)
+            time.sleep(5)
             file = open("network.txt",'r')
             lines = file.readlines()
             print(lines)
