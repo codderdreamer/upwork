@@ -7,11 +7,18 @@ function connect(){
         incomingData = JSON.parse( e.data );
         console.log(incomingData)
 
+        console.log(window.location)
+
         if (incomingData.Command == "WifiPage") {
-            window.location = "http://192.168.1.138:5000/WifiPage";
+            if(window.location != "http://192.168.1.138:5000/WifiPage"){
+                window.location = "http://192.168.1.138:5000/WifiPage";
+            }
+            
         }
         else if(incomingData.Command == "VisihelpPage"){
-            window.location = "http://192.168.1.138:5000/VisihelpPage"
+            if(window.location != "http://192.168.1.138:5000/VisihelpPage"){
+                window.location = "http://192.168.1.138:5000/VisihelpPage";
+            }
         }
 
         
