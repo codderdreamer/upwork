@@ -1,2 +1,2 @@
 #!/bin/sh
-nmcli dev wifi > network.txt
+sudo nmcli dev wifi > network.txt
