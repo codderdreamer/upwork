@@ -105,7 +105,13 @@ class Application():
             time.sleep(3)
             file = open("network.txt",'r')
             lines = file.readlines()
-            print(lines)
+            for line in lines:
+                if "IN-USE" in line:
+                    pass
+                else:
+                    line.split(" ")
+                    print("line",line)
+
 
 
 
