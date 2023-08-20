@@ -91,6 +91,7 @@ class Application():
                             print("https://momentum.visi.help/ sayfasına git")
 
         # Önceden kaydedilmişlere bağlanamdıysa, wifi seçici sayfasını getir
+        print("self.wifi_connected",self.wifi_connected)
         if self.wifi_connected == False:
 
             # Hangi wifiler mevcut?
