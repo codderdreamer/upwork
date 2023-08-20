@@ -13,6 +13,7 @@ class EndpointAction(object):
         answer = self.action()
         # Create the answer (bundle it in a correctly formatted HTTP answer)
         self.response = Response(answer, status=200, headers={})
+        self.response.headers["X-FRAME-OPTIONS"] = "ALLOWALL"
         # Send it
         return self.response
     
