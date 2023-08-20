@@ -97,7 +97,8 @@ class Application():
             # Hangi wifiler mevcut?
             # threading.Thread(target=get_wifi_list,daemon=True).start()
             os.system('touch network.txt')
-            os.system('bash searchwifi.sh')
+            # os.system('bash searchwifi.sh')
+            os.system('sudo python test.py')
             # time.sleep(5)
             # file = open("network.txt",'r')
             # lines = file.readlines()
