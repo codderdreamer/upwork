@@ -9,7 +9,7 @@ def open_web_browser():
 
 def scan_network(application):
     while application.wifi_selector:
-        # Bağlandı mı kontrol et
+        # #Bağlandı mı kontrol et
         # print("scan_network")
         # os.system('touch network_status.txt')
         # os.system('nmcli dev status > network_status.txt')
@@ -99,42 +99,79 @@ def scan_network(application):
         #     # Önceden kaydedilmişlere bağlanamdıysa, wifi seçici sayfasını getir
         #     print("self.wifi_connected",application.wifi_connected)
 
-            if application.wifi_connected == False:
-                # Hangi wifiler mevcut?
-                os.system('touch network.txt')
-                os.system('nmcli dev wifi > network.txt')
-                time.sleep(3)
-                file = open("network.txt",'r')
-                lines = file.readlines()
-                application.wifi_list = {}
-                for line in lines:
-                    if "IN-USE" in line:
-                        pass
-                    else:
-                        line = line.split(" ")
-                        wifi = []
-                        wifi_name = ""
-                        for word in line:
-                            if word != "":
-                                wifi.append(word)
-                        for word in wifi:
-                            if ":" in word:
-                                pass
-                            else:
-                                if "Infra" == word:
-                                    break
-                                wifi_name = wifi_name + word + " "
+        #     if application.wifi_connected == False:
+        #         # Hangi wifiler mevcut?
+        #         os.system('touch network.txt')
+        #         os.system('nmcli dev wifi > network.txt')
+        #         time.sleep(3)
+        #         file = open("network.txt",'r')
+        #         lines = file.readlines()
+        #         application.wifi_list = {}
+        #         for line in lines:
+        #             if "IN-USE" in line:
+        #                 pass
+        #             else:
+        #                 line = line.split(" ")
+        #                 wifi = []
+        #                 wifi_name = ""
+        #                 for word in line:
+        #                     if word != "":
+        #                         wifi.append(word)
+        #                 for word in wifi:
+        #                     if ":" in word:
+        #                         pass
+        #                     else:
+        #                         if "Infra" == word:
+        #                             break
+        #                         wifi_name = wifi_name + word + " "
 
-                        for word in wifi:
-                            if "*" in word:
-                                wifi_bar = word
+        #                 for word in wifi:
+        #                     if "*" in word:
+        #                         wifi_bar = word
 
-                        application.wifi_list[wifi_name] = wifi_bar
+        #                 application.wifi_list[wifi_name] = wifi_bar
 
-                print(application.wifi_list)
-                print("Wifi selector sayfasına git")
+        #         print(application.wifi_list)
+        #         print("Wifi selector sayfasına git")
 
-                application.websocket_module.send_message_to_all("WifiPage",application.wifi_list)
+        #         application.websocket_module.send_message_to_all("WifiPage",application.wifi_list)
+
+        if application.wifi_connected == False:
+            # Hangi wifiler mevcut?
+            os.system('touch network.txt')
+            os.system('nmcli dev wifi > network.txt')
+            time.sleep(3)
+            file = open("network.txt",'r')
+            lines = file.readlines()
+            application.wifi_list = {}
+            for line in lines:
+                if "IN-USE" in line:
+                    pass
+                else:
+                    line = line.split(" ")
+                    wifi = []
+                    wifi_name = ""
+                    for word in line:
+                        if word != "":
+                            wifi.append(word)
+                    for word in wifi:
+                        if ":" in word:
+                            pass
+                        else:
+                            if "Infra" == word:
+                                break
+                            wifi_name = wifi_name + word + " "
+
+                    for word in wifi:
+                        if "*" in word:
+                            wifi_bar = word
+
+                    application.wifi_list[wifi_name] = wifi_bar
+
+            print(application.wifi_list)
+            print("Wifi selector sayfasına git")
+
+            application.websocket_module.send_message_to_all("WifiPage",application.wifi_list)
 
         time.sleep(10)
 
