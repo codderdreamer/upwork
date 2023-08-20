@@ -14,6 +14,7 @@ class Application():
     def __init__(self):
         self.wifi_devices = []
         self.wifi_connected = False
+        self.wifi_name = ""
 
         # Websocketi Başlat
         self.websocket_module = WebsocketModule(self)
@@ -54,11 +55,10 @@ class Application():
         lines = file.readlines()
         for line in lines:
             print(line)
-            if " connected" in line:
-                    dene = line.split(" ")
-                    
-                    print(dene[len(dene)-2])
-                    print("Wifi connected.")
+            if (" connected" in line) and (self.wifi_connected == False):
+                    wifiSplit = line.split(" ")
+                    self.wifi_name = wifiSplit[len(wifiSplit)-2]
+                    print("Wifi connected.", self.wifi_name)
                     self.wifi_connected = True
 
         # Bağlandıysa sayfayı aç
@@ -83,14 +83,45 @@ class Application():
                     lines = file.readlines()
                     for line in lines:
                         print(line)
-                        if " connected" in line:
-                                print("Wifi connected.")
-                                self.wifi_connected = True
-                                print("https://momentum.visi.help/ sayfasına git")
+                        if (" connected" in line) and (self.wifi_connected == False):
+                            wifiSplit = line.split(" ")
+                            self.wifi_name = wifiSplit[len(wifiSplit)-2]
+                            print("Wifi connected.", self.wifi_name)
+                            self.wifi_connected = True
+                            print("https://momentum.visi.help/ sayfasına git")
 
         # Önceden kaydedilmişlere bağlanamdıysa, wifi seçici sayfasını getir
         if self.wifi_connected == False:
+
+            # Hangi wifiler mevcut?
+            os.system('touch network.txt')
+            os.system("nmcli dev wifi > network.txt")
+            file = open("network.txt",'r')
+            lines = file.readlines()
+            print(lines)
+
+
+
+
+
+
             print("Wifi selector sayfasına git")
+
+            # Hangi wifiler varsa göstermen lazım isimlerini
+            # kumanda ile seçim yaptığında diğer sayfaya geçip şifresini klavyeden girebilmen lazım
+
+
+
+
+    #             "1" : {
+    #     "ssid" : "FiberHGW_TP06BA_5GHz",
+    #     "password" : "xNUEjvX9",
+    #     "priority" : "1"
+    # }
+
+
+
+
 
 
 
@@ -118,8 +149,6 @@ class Application():
 
 
         # self.network_ssid = {}
-
-        # # scan_network(self)
         # turn_on_network()
         # threading.Thread(target=scan_network, args=(self,), daemon=True).start()
 
