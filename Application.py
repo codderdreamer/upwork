@@ -16,7 +16,7 @@ class Application():
         self.wifi_connected = False
         self.wifi_name = ""
 
-        os.system('bash searchwifi.sh')
+        
 
         # Websocketi Başlat
         self.websocket_module = WebsocketModule(self)
@@ -94,6 +94,10 @@ class Application():
 
         # Önceden kaydedilmişlere bağlanamdıysa, wifi seçici sayfasını getir
         print("self.wifi_connected",self.wifi_connected)
+
+        os.system('bash searchwifi.sh')
+
+
         if self.wifi_connected == False:
 
             # Hangi wifiler mevcut?
