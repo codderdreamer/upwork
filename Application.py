@@ -25,7 +25,7 @@ class Application():
 
         # Network'ü aktif et ilk başta aktif olmuyor
         os.system('sudo systemctl restart NetworkManager')
-        time.sleep(5)
+        time.sleep(5) # restart ederken wifi bağlanmaya çalışınca bağlanmıyor sıkıntı oluyor
 
         # wifi.json dosyasını al
         try:
@@ -55,6 +55,8 @@ class Application():
         for line in lines:
             print(line)
             if " connected" in line:
+                    dene = line.split("\t")
+                    print(dene)
                     print("Wifi connected.")
                     self.wifi_connected = True
 
