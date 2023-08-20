@@ -127,7 +127,7 @@ class Application():
                             if "Infra" == word:
                                 print("break")
                                 break
-                            wifi_name = wifi_name + word
+                            wifi_name = wifi_name + word + " "
 
 
 
