@@ -43,6 +43,7 @@ class FlaskModule():
         self.add_endpoint(endpoint="/", endpoint_name="/", handler=self.InitFlask)
         self.add_endpoint(endpoint="/WifiPage", endpoint_name="/WifiPage", handler=self.WifiPage)
         self.add_endpoint(endpoint="/VisihelpPage", endpoint_name="/VisihelpPage", handler=self.VisihelpPage)
+        self.add_endpoint(endpoint="/visihelp", endpoint_name="/visihelp", handler=self.visihelp)
 
         # Add action endpoints
         #self.add_endpoint(endpoint="/add_X", endpoint_name="/add_X", handler=self.add_X)
@@ -64,6 +65,9 @@ class FlaskModule():
     
     def VisihelpPage(self):
         return render_template('VisihelpPage.html')
+    
+    def visihelp(self):
+        return render_template('https://www.w3schools.com')
 
 
     def Test(self):
@@ -73,3 +77,4 @@ class FlaskModule():
         # Dummy action
         return "Oops Something Went Wrong!"
         # Test it with curl 127.0.0.1:5000/add_X
+
