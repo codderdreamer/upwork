@@ -115,10 +115,24 @@ class Application():
                 else:
                     line = line.split(" ")
                     wifi = []
+                    wifi_new = []
                     for word in line:
                         if word != "":
                             wifi.append(word)
-                    print(wifi)
+                    print("wifi",wifi)
+                    for word in wifi:
+                        if ":" in word:
+                            pass
+                        else:
+                            if "Infra" == word:
+                                print("break")
+                                break
+                            wifi_new.append(word)
+                            print("wifi_new",wifi_new)
+
+
+
+
                     self.wifi_list[wifi[1]] = wifi[7]
 
             print(self.wifi_list)
