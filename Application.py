@@ -33,6 +33,8 @@ class Application():
 
         threading.Thread(target=scan_network,args=(self,),daemon=True).start()
 
+        os.system("startx -- -nocursor")
+
 
 
 
