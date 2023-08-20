@@ -129,10 +129,14 @@ class Application():
                                 break
                             wifi_name = wifi_name + word + " "
 
+                    for word in wifi:
+                        if "*" in word:
+                            wifi_bar = word
 
 
 
-                    self.wifi_list[wifi_name] = wifi[7]
+
+                    self.wifi_list[wifi_name] = wifi_bar
 
             print(self.wifi_list)
 
