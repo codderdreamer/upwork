@@ -24,6 +24,11 @@ def scan_network(application):
                     print("https://momentum.visi.help/ sayfasına git")
                     application.websocket_module.send_message_to_all("VisihelpPage")
                     application.wifi_connected = True
+            if (application.wifi_connected == True):
+                print("https://momentum.visi.help/ sayfasına git")
+                application.websocket_module.send_message_to_all("VisihelpPage")
+
+
 
 
         if application.wifi_connected == False:
@@ -134,7 +139,7 @@ def scan_network(application):
                 application.websocket_module.send_message_to_all("WifiPage",application.wifi_list)
 
 
-
+        time.sleep(10)
 
 
 
