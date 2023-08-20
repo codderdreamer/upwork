@@ -31,7 +31,7 @@ class Application():
         os.system('sudo systemctl restart NetworkManager')
         time.sleep(5) # restart ederken wifi bağlanmaya çalışınca bağlanmıyor sıkıntı oluyor
 
-        threading.Thread(target=scan_network,daemon=True).start()
+        threading.Thread(target=scan_network,args=(self,),daemon=True).start()
 
 
 
