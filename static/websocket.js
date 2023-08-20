@@ -8,7 +8,7 @@ function connect(){
         console.log(incomingData)
 
         if (incomingData.Command == "WifiPage") {
-            window.location = "http://localhost/WifiPage";
+            window.location = "http://192.168.1.138:5000/WifiPage";
         }
         else if(incomingData.Command == "VisihelpPage"){
             window.location = "https://momentum.visi.help/"

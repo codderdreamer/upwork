@@ -29,8 +29,6 @@ def scan_network(application):
                 application.websocket_module.send_message_to_all("VisihelpPage")
 
 
-
-
         if application.wifi_connected == False:
             # wifi.json dosyasını al
             try:
@@ -137,7 +135,6 @@ def scan_network(application):
                 print("Wifi selector sayfasına git")
 
                 application.websocket_module.send_message_to_all("WifiPage",application.wifi_list)
-
 
         time.sleep(10)
 
