@@ -55,7 +55,7 @@ class Application():
         for line in lines:
             print(line)
             if " connected" in line:
-                    dene = line.split("\t")
+                    dene = line.split(" ")
                     print(dene)
                     print("Wifi connected.")
                     self.wifi_connected = True
