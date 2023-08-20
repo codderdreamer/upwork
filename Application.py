@@ -112,7 +112,7 @@ class Application():
                     line = line.split(" ")
                     wifi = []
                     for word in line:
-                        if word != " ":
+                        if word != "":
                             wifi.append(word)
                     print("wifi",wifi)
 
