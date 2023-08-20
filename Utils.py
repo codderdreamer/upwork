@@ -3,6 +3,9 @@ import os
 import time
 import json
 
+def open():
+    os.system("startx -- -nocursor")
+
 def scan_network(application):
     while application.wifi_selector:
         # wifi.json dosyasını al
