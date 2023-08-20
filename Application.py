@@ -35,7 +35,7 @@ class Application():
         except Exception as e:
             print("wifi.json dosyası açılamadı",e)
 
-        # wifi dosyasında kayıtları tara
+        # wifi dosyasında kayıtları tara, öncelikli olana bağlan
         for data_key, wifi in data.items():
             print("wifi", wifi )
             if self.wifi_connected == False:
@@ -58,8 +58,10 @@ class Application():
                     print("Wifi connected.")
                     self.wifi_connected = True
 
+        # Bağlandıysa sayfayı aç
         if self.wifi_connected:
             print("https://momentum.visi.help/ sayfasına git")
+        # Bağlanmadıysa wifi dosyasını tara hepsini dene
         else:
             for data_key, wifi in data.items():
                 print("wifi", wifi )
@@ -82,6 +84,11 @@ class Application():
                                 print("Wifi connected.")
                                 self.wifi_connected = True
                                 print("https://momentum.visi.help/ sayfasına git")
+
+        # Önceden kaydedilmişlere bağlanamdıysa, wifi seçici sayfasını getir
+        if self.wifi_connected == False:
+            print("Wifi selector sayfasına git")
+
 
 
         
