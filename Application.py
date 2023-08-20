@@ -94,8 +94,8 @@ class Application():
 
         # Önceden kaydedilmişlere bağlanamdıysa, wifi seçici sayfasını getir
         print("self.wifi_connected",self.wifi_connected)
-        
-        time.sleep(5)
+
+        time.sleep(3)
         os.system('bash searchwifi.sh')
 
 
