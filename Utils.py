@@ -3,6 +3,7 @@ import os
 import time
 
 def get_wifi_list():
+    print("get_wifi_list")
     os.system('pwd')
     os.system('touch network.txt')
     os.system("nmcli dev wifi > network.txt")
