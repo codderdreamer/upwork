@@ -4,6 +4,7 @@ import time
 import json
 
 def open_web_browser():
+    time.sleep(10)
     os.system("startx -- -nocursor")
 
 def scan_network(application):
