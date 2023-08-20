@@ -42,6 +42,7 @@ class FlaskModule():
         # Add root endpoint
         self.add_endpoint(endpoint="/", endpoint_name="/", handler=self.InitFlask)
         self.add_endpoint(endpoint="/WifiPage", endpoint_name="/WifiPage", handler=self.WifiPage)
+        self.add_endpoint(endpoint="/VisihelpPage", endpoint_name="/VisihelpPage", handler=self.VisihelpPage)
 
         # Add action endpoints
         #self.add_endpoint(endpoint="/add_X", endpoint_name="/add_X", handler=self.add_X)
@@ -60,6 +61,10 @@ class FlaskModule():
 
     def WifiPage(self):
         return render_template('WifiPage.html')
+    
+    def VisihelpPage(self):
+        return render_template('VisihelpPage.html')
+
 
     def Test(self):
         return render_template('test.html')
