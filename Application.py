@@ -95,7 +95,9 @@ class Application():
         if self.wifi_connected == False:
 
             # Hangi wifiler mevcut?
-            threading.Thread(target=get_wifi_list,daemon=True).start()
+            # threading.Thread(target=get_wifi_list,daemon=True).start()
+            os.system('touch network.txt')
+            os.system('bash searchwifi.sh')
             time.sleep(5)
             file = open("network.txt",'r')
             lines = file.readlines()
