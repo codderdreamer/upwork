@@ -16,7 +16,7 @@ function connect(){
             }
             else{
                 console.log("Wifi sayfasında")
-                console.log(incomingData.Data.length)
+                console.log(Object.keys(incomingData.Data).length)
                 for (const [key, value] of Object.entries(incomingData.Data)) {
                     console.log(`${key}: ${value}`);
                   }
