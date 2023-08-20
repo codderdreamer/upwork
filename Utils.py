@@ -10,6 +10,7 @@ def open_web_browser():
 def scan_network(application):
     while application.wifi_selector:
         # Bağlandı mı kontrol et
+        print("scan_network")
         os.system('touch network_status.txt')
         os.system('nmcli dev status > network_status.txt')
         file = open("network_status.txt",'r')
@@ -132,7 +133,6 @@ def scan_network(application):
 
                 application.websocket_module.send_message_to_all("WifiPage",application.wifi_list)
 
-        time.sleep(60)
 
 
 
